@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "A",
+    "name": "AGILENT TECHNOLOGIES INC",
+    "date": "2017-04-19",
+    "isEnabled": true
+  },
+  {
+    "symbol": "AA",
+    "name": "ALCOA CORP",
+    "date": "2017-04-19",
+    "isEnabled": true
+  }
+]

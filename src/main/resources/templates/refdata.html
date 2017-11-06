@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Reference Data Symbols</title>
+<!--link to bootstrap.css v4.0.0-...-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <table class="table table-striped" id="tableRefDataSymbols">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Symbol</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--  iterate over items in list -->
+                        <tr th:each="item : ${refDataSymbols}" scope="row">
+                            <td th:text="${item.name}">--</td>
+                            <td th:text="${item.symbol}">--</td>
+                            <td> <a class="btn btn-primary" th:href="@{'/stock/company/' + ${item.symbol} }" role="button">Details</a> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
