@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CompanyController {
@@ -16,9 +15,8 @@ public class CompanyController {
 	}
 
 	@RequestMapping("/stock/company/{symbol}")
-	public String company(@PathVariable("symbol") String symbol, Model model) {
-		Company company = this.companyService.getCompany(symbol);
-		System.out.println(company);
+	public String company(@PathVariable("symbol") final String symbol, final Model model) {
+		final Company company = this.companyService.getCompany(symbol);
 		model.addAttribute("company", company);
 		return "stock/company";
 	}
