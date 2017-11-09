@@ -14,7 +14,7 @@ public class CompanyController {
 		this.companyService = companyService;
 	}
 
-	@RequestMapping("/stock/company/{symbol}")
+	@RequestMapping("/stock/{symbol}/company")
 	public String company(@PathVariable("symbol") final String symbol, final Model model) {
 		final Company company = this.companyService.getCompany(symbol);
 		model.addAttribute("company", company);

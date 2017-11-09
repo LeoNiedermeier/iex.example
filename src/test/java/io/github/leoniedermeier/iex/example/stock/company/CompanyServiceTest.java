@@ -6,15 +6,11 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
-import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.client.MockRestServiceServer;
-import org.springframework.test.web.client.match.MockRestRequestMatchers;
-import org.springframework.test.web.client.response.MockRestResponseCreators;
 import org.springframework.web.client.RestTemplate;
 
 public class CompanyServiceTest {
@@ -34,7 +30,7 @@ public class CompanyServiceTest {
 	public void testGetCompany() {
 		server.expect(requestTo("https://api.iextrading.com/1.0/stock/abc/company"))
 				.andRespond(withSuccess(
-						new ClassPathResource("/io/github/leoniedermeier/iex/example/company/company_abc.json"),
+						new ClassPathResource("/io/github/leoniedermeier/iex/example/stock/company/company_abc.json"),
 						APPLICATION_JSON));
 		Company company = this.companyService.getCompany("abc");
 
