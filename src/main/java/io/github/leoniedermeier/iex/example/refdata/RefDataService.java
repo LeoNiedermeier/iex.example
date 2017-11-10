@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestOperations;
@@ -14,6 +15,8 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class RefDataService {
+
+	static final String CACHE_NAME_REF_DATA_SYMBOL = "RefDataSymbol";
 
 	private final RestOperations restOperations;
 
@@ -28,6 +31,7 @@ public class RefDataService {
 		this.restOperations = builder.build();
 	}
 
+	@Cacheable(CACHE_NAME_REF_DATA_SYMBOL)
 	public List<RefDataSymbol> getRefDataSymbols() {
 		// API descripttion: https://iextrading.com/developer/docs/
 		final ResponseEntity<RefDataSymbol[]> entity = this.restOperations

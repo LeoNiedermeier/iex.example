@@ -8,28 +8,29 @@
 </head>
 <body>
     <div class="row" layout:fragment="content">
-        <div class="col-sm">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <td>Created</td>
-                        <td>Summary</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:if="${news.empty}">
-                        <td colspan="3">No news</td>
-                    </tr>
-                    <tr th:each="message : ${news}">
-                        <td th:text="${#calendars.format(message.datetime)}">July 11, 2012 2:17:16 PM CDT</td>
-                        <td>
-                            <a href="view.html" th:href="@{'/' + ${message.source}}" th:text="${message.summary}">
-                                The summary </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="list-group">
+        <!-- bootstrap flex: http://getbootstrap.com/docs/4.0/utilities/flex/ -->
+            <div class="list-group-item list-group-item-action flex-column align-items-start"
+                th:each="message : ${news}">
+                <!-- justify-content-between: falls zwei Elemente angezeigt werden: eines am Anfang, eines am Ende, dazwischen leer   -->
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1" th:text="${message.headline}">Message Heading</h5>
+                   
+                    <!--  text-nowrap: kein Umbruch -->
+                    <small class="text-muted text-nowrap"
+                        th:text="${#temporals.format(message.datetime, 'dd-MM-yyyy HH:mm')}">Publish Date</small>
+                </div>
+                
+                <p class="mb-1" th:text="${message.summary}">Message summary</p>
+                
+                <div class="d-flex w-100 justify-content-between">
+                    <small class="text-muted" th:text="${message.source}">Message source</small>
+                    <!--  URL nach aussen, daher kein Rewrite mit @{...} -->
+                    <a th:href="${message.url}" class="badge badge-info">Read full story</a>
+                </div>
+            </div>
         </div>
+
     </div>
 </body>
 </html>
