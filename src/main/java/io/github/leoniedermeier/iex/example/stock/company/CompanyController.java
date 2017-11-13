@@ -1,9 +1,9 @@
 package io.github.leoniedermeier.iex.example.stock.company;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class CompanyController {
@@ -15,9 +15,10 @@ public class CompanyController {
 	}
 
 	@RequestMapping("/stock/{symbol}/company")
-	public String company(@PathVariable("symbol") final String symbol, final Model model) {
+	public ModelAndView company(@PathVariable("symbol") final String symbol) {
+		ModelAndView model = new ModelAndView("stock/company");
 		final Company company = this.companyService.getCompany(symbol);
-		model.addAttribute("company", company);
-		return "stock/company";
+		model.addObject("company", company);
+		return model;
 	}
 }

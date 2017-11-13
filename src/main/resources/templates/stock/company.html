@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
-   layout:decorate="~{fragments/layout.html}" th:with="greeting='Hello!'" >
-<head>
-<title>Company Details</title>
-</head>
-<body layout:fragment="content">
-    <div class="row">
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragments/layout :: template('Stock News',~{::content})">
+    <div class="row" th:fragment="content">
         <div class="col-sm">
             <table class="table table-striped" id="tableRefDataSymbols">
                 <tbody>
@@ -53,7 +47,4 @@
             <a class="btn btn-info" th:href="@{'/stock/' + ${company.symbol} +'/news/last/5' }" role="button">News</a>
         </div>
     </div>
-</body>
 </html>
-
-

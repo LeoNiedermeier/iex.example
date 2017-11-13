@@ -1,42 +1,34 @@
-<!DOCTYPE html>
-<!-- Fast minimales html mit Layout Template -->
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
-    layout:decorate="~{fragments/layout.html}">
-<head>
-<!-- Überschreibt den Titel vom Layout Template -->
-<title>Reference Data Symbols</title>
-</head>
-<body>
-    <div class="row" layout:fragment="content">
-        <div class="col-sm">
-            <table class="table table-striped" id="tableRefDataSymbols">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Symbol</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!--  iterate over items in list -->
-                    <tr th:each="item : ${refDataSymbols}" scope="row">
-                        <td th:text="${item.name}">--</td>
-                        <td th:text="${item.symbol}">--</td>
-                        <td>
-                            <!-- spezielles Format für urls: Strings zusammenbauen -->
-                            <a class="btn btn-primary" th:href="@{'/stock/' + ${item.symbol} +'/company' }"
-                                role="button">Details</a>
-                        </td>
-                        <td>
-                            <!-- oder mit variable template in url -->
-                            <a class="btn btn-info" th:href="@{/stock/{symbol}/news/last/4(symbol=${item.symbol}) }"
-                                role="button">News</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<html xmlns:th="http://www.thymeleaf.org"
+    th:replace="fragments/layout :: template('Reference Data Symbols',~{::content})">
+<div class="row" th:fragment="content">
+    <div class="col-sm">
+        <table class="table table-striped table-sm" id="tableRefDataSymbols">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Symbol</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--  iterate over items in list -->
+                <tr th:each="item : ${refDataSymbols}" scope="row">
+                    <td th:text="${item.name}">--</td>
+                    <td th:text="${item.symbol}">--</td>
+                    <td>
+                        <!-- spezielles Format für urls: Strings zusammenbauen -->
+                        <a class="btn btn-primary btn-sm" th:href="@{'/stock/' + ${item.symbol} +'/company' }"
+                            role="button">Details</a>
+                    </td>
+                    <td>
+                        <!-- oder mit variable template in url -->
+                        <a class="btn btn-info btn-sm" th:href="@{/stock/{symbol}/news/last/4(symbol=${item.symbol}) }"
+                            role="button">News</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-</body>
+</div>
 </html>

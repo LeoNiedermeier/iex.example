@@ -1,36 +1,27 @@
-<!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
-    layout:decorate="~{fragments/layout.html}">
-<head>
-<title>Stock News</title>
-</head>
-<body>
-</head>
-<body>
-    <div class="row" layout:fragment="content">
-        <div class="list-group">
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragments/layout :: template('Stock News',~{::content})">
+
+<div class="row" th:fragment="content">
+    <div class="list-group">
         <!-- bootstrap flex: http://getbootstrap.com/docs/4.0/utilities/flex/ -->
-            <div class="list-group-item list-group-item-action flex-column align-items-start"
-                th:each="message : ${news}">
-                <!-- justify-content-between: falls zwei Elemente angezeigt werden: eines am Anfang, eines am Ende, dazwischen leer   -->
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1" th:text="${message.headline}">Message Heading</h5>
-                   
-                    <!--  text-nowrap: kein Umbruch -->
-                    <small class="text-muted text-nowrap"
-                        th:text="${#temporals.format(message.datetime, 'dd-MM-yyyy HH:mm')}">Publish Date</small>
-                </div>
-                
-                <p class="mb-1" th:text="${message.summary}">Message summary</p>
-                
-                <div class="d-flex w-100 justify-content-between">
-                    <small class="text-muted" th:text="${message.source}">Message source</small>
-                    <!--  URL nach aussen, daher kein Rewrite mit @{...} -->
-                    <a th:href="${message.url}" class="badge badge-info">Read full story</a>
-                </div>
+        <div class="list-group-item list-group-item-action flex-column align-items-start" th:each="message : ${news}">
+            <!-- justify-content-between: falls zwei Elemente angezeigt werden: eines am Anfang, eines am Ende, dazwischen leer   -->
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1" th:text="${message.headline}">Message Heading</h5>
+
+                <!--  text-nowrap: kein Umbruch -->
+                <small class="text-muted text-nowrap"
+                    th:text="${#temporals.format(message.datetime, 'dd-MM-yyyy HH:mm')}">Publish Date</small>
+            </div>
+
+            <p class="mb-1" th:text="${message.summary}">Message summary</p>
+
+            <div class="d-flex w-100 justify-content-between">
+                <small class="text-muted" th:text="${message.source}">Message source</small>
+                <!--  URL nach aussen, daher kein Rewrite mit @{...} -->
+                <a th:href="${message.url}" class="badge badge-info">Read full story</a>
             </div>
         </div>
-
     </div>
-</body>
+
+</div>
 </html>

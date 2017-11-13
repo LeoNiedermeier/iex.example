@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="template(title,content)">
 <head>
-<title>Layout</title>
+<title th:text="${title}">Layout</title>
 <link rel="icon" href="/favicon.ico" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
@@ -50,7 +50,7 @@ body {
     </header>
 
     <div class="container">
-        <div layout:fragment="content">A placeholder for real content.</div>
+        <div th:replace="${content}">A placeholder for real content.</div>
     </div>
 
     <footer class="footer">
