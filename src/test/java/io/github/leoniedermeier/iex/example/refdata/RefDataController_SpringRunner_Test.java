@@ -8,6 +8,7 @@ import static org.mockito.Mockito.when;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -17,14 +18,16 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.html.HtmlTable;
 
 /**
- * 
+ *
  * https://docs.spring.io/spring-boot/docs/2.0.x/reference/html/boot-features-testing.html#boot-features-testing-spring-boot-applications-testing-autoconfigured-mvc-tests
  *
- * Hinweis:
- * Mit diesem Setup wird auch die Autokonfiguration von Spring Boot verwendet. "Per Hand" wäre der Setup ziemlich aufwändig.
+ * Hinweis: Mit diesem Setup wird auch die Autokonfiguration von Spring Boot
+ * verwendet. "Per Hand" wäre der Setup ziemlich aufwändig.
  */
 @RunWith(SpringRunner.class)
-@WebMvcTest(controllers = { RefDataController.class })
+@WebMvcTest(controllers = { RefDataController.class },
+		// disable security
+		excludeAutoConfiguration = { MockMvcSecurityAutoConfiguration.class })
 public class RefDataController_SpringRunner_Test {
 
 	@Autowired
@@ -35,10 +38,11 @@ public class RefDataController_SpringRunner_Test {
 
 	@Test
 	public void testRefdata() throws Exception {
-		when(refDataService.getRefDataSymbols())
+		when(this.refDataService.getRefDataSymbols())
 				.thenReturn(asList(new RefDataSymbol("a-symbol", "a-name"), new RefDataSymbol("b-symbol", "b-name")));
 
-		HtmlPage page = this.webClient.getPage("/refdata");
+		final HtmlPage page = this.webClient.getPage("/refdata");
+
 		final HtmlTable table = page.getHtmlElementById("tableRefDataSymbols");
 
 		// header row ignored
