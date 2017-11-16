@@ -23,8 +23,8 @@ import org.springframework.test.web.client.MockRestServiceServer;
 // https://docs.spring.io/spring-boot/docs/2.0.x/reference/html/boot-features-testing.html#boot-features-testing-spring-boot-applications-testing-autoconfigured-rest-client
 // beschrieben
 @RunWith(SpringRunner.class)
-@RestClientTest(RefDataService.class)
-public class RefDataService_SpringRunner_Test {
+@RestClientTest(RefDataServiceRemote.class)
+public class RefDataServiceRemote_SpringRunner_Test {
 
 	@Autowired
 	RefDataService refDataService;

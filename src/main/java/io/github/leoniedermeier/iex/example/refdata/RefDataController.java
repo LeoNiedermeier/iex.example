@@ -2,11 +2,11 @@ package io.github.leoniedermeier.iex.example.refdata;
 
 import static org.apache.commons.lang3.StringUtils.containsIgnoreCase;
 import static org.apache.commons.lang3.StringUtils.isNoneEmpty;
+import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Predicate;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
@@ -39,40 +39,35 @@ public class RefDataController {
 			return this.index;
 		}
 
-		@Override
-		public String toString() {
-			return "CharAndIndex [character=" + this.character + ", index=" + this.index + "]";
-		}
-
 	}
 
 	public static class SearchFields {
 		private String name;
 		private String symbol;
-		
+
 		private int fromIndex;
-		
+
 		public int getFromIndex() {
-			return fromIndex;
+			return this.fromIndex;
 		}
-		
+
 		public String getName() {
-			return name;
+			return this.name;
 		}
 
 		public String getSymbol() {
-			return symbol;
+			return this.symbol;
 		}
 
-		public void setFromIndex(int fromIndex) {
+		public void setFromIndex(final int fromIndex) {
 			this.fromIndex = fromIndex;
 		}
 
-		public void setName(String name) {
+		public void setName(final String name) {
 			this.name = name;
 		}
 
-		public void setSymbol(String symbol) {
+		public void setSymbol(final String symbol) {
 			this.symbol = symbol;
 		}
 	}
@@ -94,11 +89,27 @@ public class RefDataController {
 		return index;
 	}
 
+	private List<RefDataSymbol> filterList(final List<RefDataSymbol> refDataSymbols, final SearchFields searchFields) {
+		// Predicate für Suche mit optinalen Elementen zusammenbauen: geht mit and(...)
+		Predicate<RefDataSymbol> predicate = r -> true;
+		if (isNoneEmpty(searchFields.getName())) {
+			predicate = predicate.and(p -> containsIgnoreCase(p.getName(), searchFields.getName()));
+		}
+
+		if (isNoneEmpty(searchFields.getSymbol())) {
+			predicate = predicate.and(p -> containsIgnoreCase(p.getSymbol(), searchFields.getSymbol()));
+		}
+		final List<RefDataSymbol> filtered = refDataSymbols.stream().filter(predicate).collect(Collectors.toList());
+		return filtered;
+	}
+
 	private List<RefDataSymbol> getRefDataSymbols() {
 		// 1. prepare list: filter null and sort
 		final List<RefDataSymbol> refDataSymbols = this.refDataService.getRefDataSymbols();
 
-		final List<RefDataSymbol> sortedList = refDataSymbols.stream().filter(p -> StringUtils.isNotEmpty(p.getName()))
+		final List<RefDataSymbol> sortedList = refDataSymbols.stream().filter(p -> isNotEmpty(p.getName()))
+				// ignore-case vergleich, daher geht
+				// Comparator.comparing(RefDataSymbol::getName) nicht
 				.sorted((r1, r2) -> StringUtils.compareIgnoreCase(r1.getName(), r2.getName()))
 				.collect(Collectors.toList());
 		return sortedList;
@@ -139,7 +150,7 @@ public class RefDataController {
 	@GetMapping("/refdata")
 	public ModelAndView refdata(
 			@RequestParam(name = "fromIndex", required = false, defaultValue = "0") final int fromIndex) {
-		final ModelAndView model = new ModelAndView("refdata");
+		final ModelAndView model = new ModelAndView("refdata/refdata");
 
 		final List<RefDataSymbol> refDataSymbols = getRefDataSymbols();
 
@@ -150,22 +161,19 @@ public class RefDataController {
 		return model;
 	}
 
-	@PostMapping("/refdata")
-	public ModelAndView search(@ModelAttribute SearchFields searchFields) {
+	@PostMapping(value = "/refdata", params = { "reset" })
+	public ModelAndView reset() {
+		return this.refdata(0);
+	}
 
-		final ModelAndView model = new ModelAndView("refdata");
+	@PostMapping("/refdata")
+	public ModelAndView search(@ModelAttribute final SearchFields searchFields) {
+
+		final ModelAndView model = new ModelAndView("refdata/refdata");
 
 		final List<RefDataSymbol> refDataSymbols = getRefDataSymbols();
 
-		Predicate<RefDataSymbol> predicate = r -> true;
-		if (isNoneEmpty(searchFields.getName())) {
-			predicate = predicate.and(p -> containsIgnoreCase(p.getName(), searchFields.getName()));
-		}
-
-		if (isNoneEmpty(searchFields.getSymbol())) {
-			predicate = predicate.and(p -> containsIgnoreCase(p.getSymbol(), searchFields.getSymbol()));
-		}
-		List<RefDataSymbol> filtered = refDataSymbols.stream().filter(predicate).collect(Collectors.toList());
+		final List<RefDataSymbol> filtered = filterList(refDataSymbols, searchFields);
 		prepareCharToIndex(model, filtered);
 		prepareTableWithPaging(searchFields.getFromIndex(), model, filtered);
 

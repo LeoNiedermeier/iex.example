@@ -18,7 +18,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.web.client.RestTemplate;
 
-public class RefDataServiceTest {
+public class RefDataServiceRemoteTest {
 
 	private RefDataService refDataService;
 	private MockRestServiceServer mockServer;
@@ -30,7 +30,7 @@ public class RefDataServiceTest {
 		// the MockRestServiceServer.bindTo sets a MockRequestFactory in the
 		// RestTemplate. This has to be used in the RestTemplate of the servie also.
 		final RestTemplateBuilder builder = new RestTemplateBuilder().requestFactory(restTemplate.getRequestFactory());
-		this.refDataService = new RefDataService(builder);
+		this.refDataService = new RefDataServiceRemote(builder);
 	}
 
 	@Test

@@ -1,17 +1,24 @@
 <html xmlns:th="http://www.thymeleaf.org"
     th:replace="fragments/layout :: template('Reference Data Symbols',~{::content})">
-<section th:fragment="content">
+
+<!-- th:block wird nicht als Element gerendert, nur der Inhalt. Eignet sich daher als "unsichtbare" Klammer, 
+siehe auch http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#synthetic-thblock-tag -->
+<th:block th:fragment="content">
     <form action="#" th:action="@{/refdata}" th:object="${searchFields}" method="post">
         <div class="row">
             <div class="col-sm mt-3 form-inline">
                 <label for="searchName">Name:</label>
+                <!-- *{} wertet das selektierte Objekt aus (also das mit th:object selektierte) -->
                 <input type="text" class="form-control mx-sm-3" th:field="*{name}" id="searchName" />
 
                 <label for="searchSymbol">Symbol</label>
                 <input type="text" class="form-control mx-sm-3" th:field="*{symbol}" id="searchSymbol" />
 
                 <button type="submit" class="btn btn-sm btn-primary mr-2">Submit</button>
-                <button type="reset" class="btn  btn-sm btn-secondary">Reset</button>
+                <!-- Wg. name="reset" wird ein parameter reset gesendet (hat leersting als Wert). 
+                Den Parameter kann man dann über ein @PostMapping(value = "/refdata", params = { "reset" }) matchen
+                -->
+                <button type="submit" class="btn  btn-sm btn-secondary" name="reset">Reset</button>
 
             </div>
         </div>
@@ -68,13 +75,13 @@
                     th:if="${nextPagingIndex}" role="button">Next</a>
                  -->
 
-               <button type="submit" class="btn btn-sm  btn-secondary  mr-2" name="fromIndex" th:value="${previousPagingIndex}"
-                     th:if="${previousPagingIndex} != null">Previous</button>
+                <button type="submit" class="btn btn-sm  btn-secondary  mr-2" name="fromIndex"
+                    th:value="${previousPagingIndex}" th:if="${previousPagingIndex} != null">Previous</button>
 
                 <button type="submit" class="btn btn-sm  btn-secondary" name="fromIndex" th:value="${nextPagingIndex}"
                     th:if="${nextPagingIndex}">Next</button>
             </div>
         </div>
     </form>
-</section>
+</th:block>
 </html>

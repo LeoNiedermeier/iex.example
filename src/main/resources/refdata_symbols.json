@@ -1,0 +1,1194 @@
+[
+	{
+		"symbol": "A",
+		"name": "Agilent Technologies Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "2"
+	},
+	{
+		"symbol": "AA",
+		"name": "Alcoa Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "12042"
+	},
+	{
+		"symbol": "AAAP",
+		"name": "Advanced Accelerator Applications S.A.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "9517"
+	},
+	{
+		"symbol": "AABA",
+		"name": "Altaba Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "7653"
+	},
+	{
+		"symbol": "AAC",
+		"name": "AAC Holdings Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "9169"
+	},
+	{
+		"symbol": "AADR",
+		"name": "AdvisorShares Dorsey Wright ADR",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "et",
+		"iexId": "5"
+	},
+	{
+		"symbol": "AAL",
+		"name": "American Airlines Group Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "8148"
+	},
+	{
+		"symbol": "AAMC",
+		"name": "Altisource Asset Management Corp Com",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "7760"
+	},
+	{
+		"symbol": "AAME",
+		"name": "Atlantic American Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "7"
+	},
+	{
+		"symbol": "AAN",
+		"name": "Aaron's Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "8"
+	},
+	{
+		"symbol": "AAOI",
+		"name": "Applied Optoelectronics Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "7790"
+	},
+	{
+		"symbol": "AAON",
+		"name": "AAON Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "9"
+	},
+	{
+		"symbol": "AAP",
+		"name": "Advance Auto Parts Inc W/I",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "10"
+	},
+	{
+		"symbol": "AAPL",
+		"name": "Apple Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "11"
+	},
+	{
+		"symbol": "AAT",
+		"name": "American Assets Trust Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "12"
+	},
+	{
+		"symbol": "AAU",
+		"name": "Almaden Minerals Ltd.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "13"
+	},
+	{
+		"symbol": "AAV",
+		"name": "Advantage Oil & Gas Ltd",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "14"
+	},
+	{
+		"symbol": "AAWW",
+		"name": "Atlas Air Worldwide Holdings",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "15"
+	},
+	{
+		"symbol": "AAXJ",
+		"name": "iShares MSCI All Country Asia ex Japan Index Fund",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "et",
+		"iexId": "16"
+	},
+	{
+		"symbol": "AAXN",
+		"name": "Axon Enterprise Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "6667"
+	},
+	{
+		"symbol": "AB",
+		"name": "AllianceBernstein Holding L.P. Units",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "17"
+	},
+	{
+		"symbol": "ABAC",
+		"name": "Renmin Tianli Group Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "5129"
+	},
+	{
+		"symbol": "ABAX",
+		"name": "ABAXIS Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "18"
+	},
+	{
+		"symbol": "ABB",
+		"name": "ABB Ltd",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "19"
+	},
+	{
+		"symbol": "ABBV",
+		"name": "AbbVie Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "20"
+	},
+	{
+		"symbol": "ABC",
+		"name": "AmerisourceBergen Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "21"
+	},
+	{
+		"symbol": "ABCB",
+		"name": "Ameris Bancorp",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "22"
+	},
+	{
+		"symbol": "ABCD",
+		"name": "Cambium Learning Group Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "23"
+	},
+	{
+		"symbol": "ABCO",
+		"name": "The Advisory Board Company",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "24"
+	},
+	{
+		"symbol": "ABDC",
+		"name": "Alcentra Capital Corp.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "8607"
+	},
+	{
+		"symbol": "ABE",
+		"name": "Aberdeen Emerging Markets Company Oppotunities Fund Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "2272"
+	},
+	{
+		"symbol": "ABEO",
+		"name": "Abeona Therapeutics Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "9600"
+	},
+	{
+		"symbol": "ABEOW",
+		"name": "",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "N/A",
+		"iexId": "9607"
+	},
+	{
+		"symbol": "ABEV",
+		"name": "Ambev S.A. American Depositary Shares (Each representing 1)",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "36"
+	},
+	{
+		"symbol": "ABG",
+		"name": "Asbury Automotive Group Inc",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "26"
+	},
+	{
+		"symbol": "ABIL",
+		"name": "Ability Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "10960"
+	},
+	{
+		"symbol": "ABIO",
+		"name": "ARCA biopharma Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "28"
+	},
+	{
+		"symbol": "ABLX",
+		"name": "Ablynx NV",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "13649"
+	},
+	{
+		"symbol": "ABM",
+		"name": "ABM Industries Incorporated",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "29"
+	},
+	{
+		"symbol": "ABMD",
+		"name": "ABIOMED Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "30"
+	},
+	{
+		"symbol": "ABR",
+		"name": "Arbor Realty Trust",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "31"
+	},
+	{
+		"symbol": "ABR-A",
+		"name": "Arbor Realty Trust Preferred Series A",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "ps",
+		"iexId": "32"
+	},
+	{
+		"symbol": "ABR-B",
+		"name": "Arbor Realty Trust Cumulative Redeemable Preferred Series B",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "ps",
+		"iexId": "33"
+	},
+	{
+		"symbol": "ABR-C",
+		"name": "Arbor Realty Trust Cumulative Redeemable Preferred Series C",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "ps",
+		"iexId": "8310"
+	},
+	{
+		"symbol": "ABRN",
+		"name": "Arbor Realty Trust 7.375% Senior Notes due 2021",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "N/A",
+		"iexId": "8622"
+	},
+	{
+		"symbol": "ABT",
+		"name": "Abbott Laboratories",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "34"
+	},
+	{
+		"symbol": "ABTX",
+		"name": "Allegiance Bancshares Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "10446"
+	},
+	{
+		"symbol": "ABUS",
+		"name": "Arbutus Biopharma Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "6816"
+	},
+	{
+		"symbol": "ABX",
+		"name": "Barrick Gold Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "39"
+	},
+	{
+		"symbol": "AC",
+		"name": "Associated Capital Group Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "10827"
+	},
+	{
+		"symbol": "ACAD",
+		"name": "ACADIA Pharmaceuticals Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "41"
+	},
+	{
+		"symbol": "ACBI",
+		"name": "Atlantic Capital Bancshares Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "10459"
+	},
+	{
+		"symbol": "ACC",
+		"name": "American Campus Communities Inc",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "44"
+	},
+	{
+		"symbol": "ACCO",
+		"name": "Acco Brands Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "46"
+	},
+	{
+		"symbol": "ACER",
+		"name": "Acer Therapeutics Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "5176"
+	},
+	{
+		"symbol": "ACERW",
+		"name": "",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "N/A",
+		"iexId": "9912"
+	},
+	{
+		"symbol": "ACET",
+		"name": "Aceto Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "49"
+	},
+	{
+		"symbol": "ACFC",
+		"name": "Atlantic Coast Financial Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "50"
+	},
+	{
+		"symbol": "ACGL",
+		"name": "Arch Capital Group Ltd.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "53"
+	},
+	{
+		"symbol": "ACGLO",
+		"name": "Arch Capital Group Ltd. Depositary Shares Each Representing 1/1000th Interest in a Share of5.45% Non-Cumulative Preferred Shares Series F",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "ps",
+		"iexId": "13294"
+	},
+	{
+		"symbol": "ACGLP",
+		"name": "Arch Capital Group Ltd. Depositary Shares Representing Interest in 5.25% Non-Cumulative Preferred Series E Shrs",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "ps",
+		"iexId": "11911"
+	},
+	{
+		"symbol": "ACH",
+		"name": "Aluminum Corporation of China Limited American Depositary Shares",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "54"
+	},
+	{
+		"symbol": "ACHC",
+		"name": "Acadia Healthcare Company Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "55"
+	},
+	{
+		"symbol": "ACHN",
+		"name": "Achillion Pharmaceuticals Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "56"
+	},
+	{
+		"symbol": "ACHV",
+		"name": "Achieve Life Sciences Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "5116"
+	},
+	{
+		"symbol": "ACIA",
+		"name": "Acacia Communications Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "10954"
+	},
+	{
+		"symbol": "ACIM",
+		"name": "SPDR MSCI ACWI IMI",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "et",
+		"iexId": "58"
+	},
+	{
+		"symbol": "ACIU",
+		"name": "AC Immune SA",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "11879"
+	},
+	{
+		"symbol": "ACIW",
+		"name": "ACI Worldwide Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "59"
+	},
+	{
+		"symbol": "ACLS",
+		"name": "Axcelis Technologies Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "60"
+	},
+	{
+		"symbol": "ACM",
+		"name": "AECOM",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "61"
+	},
+	{
+		"symbol": "ACMR",
+		"name": "ACM Research Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "13392"
+	},
+	{
+		"symbol": "ACN",
+		"name": "Accenture plc Class A (Ireland)",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "63"
+	},
+	{
+		"symbol": "ACNB",
+		"name": "ACNB Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "64"
+	},
+	{
+		"symbol": "ACOR",
+		"name": "Acorda Therapeutics Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "66"
+	},
+	{
+		"symbol": "ACP",
+		"name": "Avenue Income Credit Strategies Fund",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "67"
+	},
+	{
+		"symbol": "ACRE",
+		"name": "Ares Commercial Real Estate Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "69"
+	},
+	{
+		"symbol": "ACRS",
+		"name": "Aclaris Therapeutics Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "10410"
+	},
+	{
+		"symbol": "ACRX",
+		"name": "AcelRx Pharmaceuticals Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "70"
+	},
+	{
+		"symbol": "ACSF",
+		"name": "American Capital Senior Floating Ltd.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "8208"
+	},
+	{
+		"symbol": "ACSI",
+		"name": "American Customer Satisfaction Core Alpha",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "N/A",
+		"iexId": "12028"
+	},
+	{
+		"symbol": "ACST",
+		"name": "Acasti Pharma Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "71"
+	},
+	{
+		"symbol": "ACTA",
+		"name": "Actua Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "3400"
+	},
+	{
+		"symbol": "ACTG",
+		"name": "Acacia Research Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "73"
+	},
+	{
+		"symbol": "ACU",
+		"name": "Acme United Corporation.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "76"
+	},
+	{
+		"symbol": "ACV",
+		"name": "AllianzGI Diversified Income & Convertible Fund of Beneficial Interest",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "10012"
+	},
+	{
+		"symbol": "ACWF",
+		"name": "iShares Edge MSCI Multifactor Global",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "N/A",
+		"iexId": "9946"
+	},
+	{
+		"symbol": "ACWI",
+		"name": "iShares MSCI ACWI Index Fund",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "et",
+		"iexId": "79"
+	},
+	{
+		"symbol": "ACWV",
+		"name": "iShares Edge MSCI Min Vol Global",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "et",
+		"iexId": "80"
+	},
+	{
+		"symbol": "ACWX",
+		"name": "iShares MSCI ACWI ex US Index Fund",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "et",
+		"iexId": "81"
+	},
+	{
+		"symbol": "ACXM",
+		"name": "Acxiom Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "82"
+	},
+	{
+		"symbol": "ACY",
+		"name": "AeroCentury Corp.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "83"
+	},
+	{
+		"symbol": "ADAP",
+		"name": "Adaptimmune Therapeutics plc",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "9962"
+	},
+	{
+		"symbol": "ADBE",
+		"name": "Adobe Systems Incorporated",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "85"
+	},
+	{
+		"symbol": "ADC",
+		"name": "Agree Realty Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "86"
+	},
+	{
+		"symbol": "ADES",
+		"name": "Advanced Emissions Solutions Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "89"
+	},
+	{
+		"symbol": "ADHD",
+		"name": "Alcobra Ltd.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "92"
+	},
+	{
+		"symbol": "ADI",
+		"name": "Analog Devices Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "93"
+	},
+	{
+		"symbol": "ADM",
+		"name": "Archer-Daniels-Midland Company",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "96"
+	},
+	{
+		"symbol": "ADMA",
+		"name": "ADMA Biologics Inc",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "9483"
+	},
+	{
+		"symbol": "ADMP",
+		"name": "Adamis Pharmaceuticals Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "8158"
+	},
+	{
+		"symbol": "ADMS",
+		"name": "Adamas Pharmaceuticals Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "8476"
+	},
+	{
+		"symbol": "ADNT",
+		"name": "Adient plc",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "11802"
+	},
+	{
+		"symbol": "ADOM",
+		"name": "ADOMANI Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "13022"
+	},
+	{
+		"symbol": "ADP",
+		"name": "Automatic Data Processing Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "98"
+	},
+	{
+		"symbol": "ADRA",
+		"name": "BLDRS Asia 50 ADR Index Fund",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "et",
+		"iexId": "99"
+	},
+	{
+		"symbol": "ADRD",
+		"name": "BLDRS Developed Markets 100 ADR Index Fund",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "et",
+		"iexId": "100"
+	},
+	{
+		"symbol": "ADRE",
+		"name": "BLDRS Emerging Markets 50 ADR Index Fund",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "et",
+		"iexId": "101"
+	},
+	{
+		"symbol": "ADRO",
+		"name": "Aduro Biotech Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "9823"
+	},
+	{
+		"symbol": "ADRU",
+		"name": "BLDRS Europe 100 ADR Index Fund",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "et",
+		"iexId": "102"
+	},
+	{
+		"symbol": "ADS",
+		"name": "Alliance Data Systems Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "103"
+	},
+	{
+		"symbol": "ADSK",
+		"name": "Autodesk Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "104"
+	},
+	{
+		"symbol": "ADSW",
+		"name": "Advanced Disposal Services Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "10650"
+	},
+	{
+		"symbol": "ADTN",
+		"name": "ADTRAN Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "106"
+	},
+	{
+		"symbol": "ADUS",
+		"name": "Addus HomeCare Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "107"
+	},
+	{
+		"symbol": "ADVM",
+		"name": "Adverum Biotechnologies Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "8910"
+	},
+	{
+		"symbol": "ADX",
+		"name": "Adams Diversified Equity Fund Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "109"
+	},
+	{
+		"symbol": "ADXS",
+		"name": "Advaxis Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "8016"
+	},
+	{
+		"symbol": "ADXSW",
+		"name": "Advaxis Inc. Warrants",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "N/A",
+		"iexId": "8017"
+	},
+	{
+		"symbol": "ADZ",
+		"name": "DB Agriculture Short ETN due April 1 2038",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "et",
+		"iexId": "110"
+	},
+	{
+		"symbol": "AE",
+		"name": "Adams Resources & Energy Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "111"
+	},
+	{
+		"symbol": "AEB",
+		"name": "AEGON N.V. Perp. Cap. Secs. Floating Rate (Netherlands)",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "bo",
+		"iexId": "8723"
+	},
+	{
+		"symbol": "AED",
+		"name": "AEGON N.V. Perp. Cap. Securities (Netherlands)",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "bo",
+		"iexId": "8724"
+	},
+	{
+		"symbol": "ANAT",
+		"name": "American National Insurance Company",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "327"
+	},
+	{
+		"symbol": "ANCB",
+		"name": "Anchor Bancorp",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "328"
+	},
+	{
+		"symbol": "ANCX",
+		"name": "Access National Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "330"
+	},
+	{
+		"symbol": "ANDA",
+		"name": "Andina Acquisition Corp. II",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "10895"
+	},
+	{
+		"symbol": "ANDAR",
+		"name": "Andina Acquisition Corp. II Right",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "N/A",
+		"iexId": "10896"
+	},
+	{
+		"symbol": "ANDAU",
+		"name": "Andina Acquisition Corp. II Unit",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "su",
+		"iexId": "10851"
+	},
+	{
+		"symbol": "ANDAW",
+		"name": "",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "N/A",
+		"iexId": "10906"
+	},
+	{
+		"symbol": "ANDE",
+		"name": "The Andersons Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "334"
+	},
+	{
+		"symbol": "ANDV",
+		"name": "Andeavor",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "6927"
+	},
+	{
+		"symbol": "ANDX",
+		"name": "Andeavor Logistics LP representing Limited Partner Interests",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "6824"
+	},
+	{
+		"symbol": "ANET",
+		"name": "Arista Networks Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "8509"
+	},
+	{
+		"symbol": "ANF",
+		"name": "Abercrombie & Fitch Company",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "336"
+	},
+	{
+		"symbol": "ANFI",
+		"name": "Amira Nature Foods Ltd",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "337"
+	},
+	{
+		"symbol": "ANGI",
+		"name": "ANGI Homeservices Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "13484"
+	},
+	{
+		"symbol": "ANGL",
+		"name": "VanEck Vectors Fallen Angel High Yield Bond",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "et",
+		"iexId": "339"
+	},
+	{
+		"symbol": "ANGO",
+		"name": "AngioDynamics Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "340"
+	},
+	{
+		"symbol": "ANH",
+		"name": "Anworth Mortgage Asset Corporation",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "341"
+	},
+	{
+		"symbol": "ANH-A",
+		"name": "Anworth Mortgage Asset Corporation Series A Preferred Stock",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "ps",
+		"iexId": "342"
+	},
+	{
+		"symbol": "ANH-B",
+		"name": "Anworth Mortgage Asset Corporation Preferred Stock Series B 6.25%",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "ps",
+		"iexId": "343"
+	},
+	{
+		"symbol": "ANH-C",
+		"name": "Anworth Mortgage Asset Corporation 7.625% Series C Cumulative Redeemable Preferred Stock",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "ps",
+		"iexId": "9705"
+	},
+	{
+		"symbol": "ANIK",
+		"name": "Anika Therapeutics Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "344"
+	},
+	{
+		"symbol": "ANIP",
+		"name": "ANI Pharmaceuticals Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "345"
+	},
+	{
+		"symbol": "ANSS",
+		"name": "ANSYS Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "349"
+	},
+	{
+		"symbol": "ANTH",
+		"name": "Anthera Pharmaceuticals Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "350"
+	},
+	{
+		"symbol": "ANTM",
+		"name": "Anthem Inc.",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "cs",
+		"iexId": "7490"
+	},
+	{
+		"symbol": "ANTX",
+		"name": "Anthem Inc. Corporate Units",
+		"date": "2017-11-15",
+		"isEnabled": true,
+		"type": "su",
+		"iexId": "9996"
+	}
+]

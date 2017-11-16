@@ -51,7 +51,7 @@ public class RefDataControllerTest {
 
 		assertThat(charToIndex.get(0).getCharacter(), equalTo('1'));
 		assertThat(charToIndex.get(0).getIndex(), equalTo(0));
-		
+
 		assertThat(charToIndex.get(1).getCharacter(), equalTo('2'));
 		assertThat(charToIndex.get(1).getIndex(), equalTo(10));
 	}
