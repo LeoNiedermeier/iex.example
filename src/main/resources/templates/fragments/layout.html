@@ -33,10 +33,7 @@ body {
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="header">
             <a class="navbar-brand" th:href="@{/refdata}">IEX Trading Example</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" th:href="@{/refdata}">
@@ -45,7 +42,18 @@ body {
                     </a>
                 </div>
             </div>
-            <a href="https://iextrading.com/developer/" target="_blank" class="navbar-text">IEX Developer Platform</a>
+            
+            <!--  Username und Logou-Button nur anzeigen, wenn eingelogged, d.h. remoteUser != null -->
+            <!-- remoteUser wird aus SecurityContextHolderAwareRequestWrapper geholt -->
+            <th:block th:if="${#httpServletRequest.remoteUser != null}">
+                <div class="nav-item" th:text="${#httpServletRequest.remoteUser}">Username</div>
+
+                <!-- the default logout url, handled by spring security -->
+                <!-- muss post sein wg. csrf token -->
+                <form th:action="@{/logout}" class="nav-item my-2 my-lg-0 ml-1" method="post">
+                    <button class="btn badge badge-danger" type="submit">Logout</button>
+                </form>
+            </th:block>
         </nav>
     </header>
 
@@ -55,8 +63,9 @@ body {
 
     <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-right small align-self-end">©2017 Leo Niedermeier</div>
+            <div class="row d-flex justify-content-between w-100">
+                <a href="https://iextrading.com/developer/" target="_blank" class="small">IEX Developer Platform</a>
+                <div class="text-right small">©2017 Leo Niedermeier</div>
             </div>
         </div>
     </footer>

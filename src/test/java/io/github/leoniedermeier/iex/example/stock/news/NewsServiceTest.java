@@ -1,7 +1,6 @@
 package io.github.leoniedermeier.iex.example.stock.news;
 
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.fail;
 
 import java.util.List;
 
@@ -18,26 +17,28 @@ import org.springframework.web.client.RestTemplate;
 
 public class NewsServiceTest {
 
-	private MockRestServiceServer server;
+    private MockRestServiceServer server;
 
-	private NewsService newsService;
+    private NewsService newsService;
 
-	@Before
-	public void init() {
-		RestTemplate restTemplate = new RestTemplate();
-		this.server = MockRestServiceServer.bindTo(restTemplate).build();
-		RestTemplateBuilder builder = new RestTemplateBuilder().requestFactory(restTemplate.getRequestFactory());
-		this.newsService = new NewsService(builder);
-	}
+    @Before
+    public void init() {
+        RestTemplate restTemplate = new RestTemplate();
+        this.server = MockRestServiceServer.bindTo(restTemplate).build();
+        RestTemplateBuilder builder = new RestTemplateBuilder().requestFactory(restTemplate.getRequestFactory());
+        this.newsService = new NewsService(builder);
+    }
 
-	@Test
-	public void testGetNews() {
-		server.expect(MockRestRequestMatchers.requestTo("https://api.iextrading.com/1.0/stock/aapl/news/last/5"))
-		.andRespond(MockRestResponseCreators.withSuccess(new ClassPathResource("io/github/leoniedermeier/iex/example/stock/news/news.json"), MediaType.APPLICATION_JSON));
-		
-		List<News> news = this.newsService.getNews("aapl", Integer.valueOf(5));
-		assertThat(news, Matchers.iterableWithSize(2));
-		assertThat(news.get(0).getHeadline(), Matchers.equalTo("headline-1"));
-	}
+    @Test
+    public void testGetNews() {
+        server.expect(MockRestRequestMatchers.requestTo("https://api.iextrading.com/1.0/stock/aapl/news/last/5"))
+                .andRespond(MockRestResponseCreators.withSuccess(
+                        new ClassPathResource("io/github/leoniedermeier/iex/example/stock/news/news.json"),
+                        MediaType.APPLICATION_JSON));
+
+        List<News> news = this.newsService.getNews("aapl", Integer.valueOf(5));
+        assertThat(news, Matchers.iterableWithSize(2));
+        assertThat(news.get(0).getHeadline(), Matchers.equalTo("headline-1"));
+    }
 
 }
