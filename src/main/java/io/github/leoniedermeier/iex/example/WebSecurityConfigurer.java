@@ -3,9 +3,6 @@ package io.github.leoniedermeier.iex.example;
 import static io.github.leoniedermeier.iex.example.security.Roles.ADMIN;
 import static io.github.leoniedermeier.iex.example.security.Roles.USER;
 
-import javax.annotation.security.RolesAllowed;
-
-import org.apache.catalina.Role;
 import org.springframework.boot.actuate.autoconfigure.security.EndpointRequest;
 import org.springframework.boot.autoconfigure.security.StaticResourceRequest;
 import org.springframework.context.annotation.Bean;
@@ -17,27 +14,16 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
-import io.github.leoniedermeier.iex.example.security.Roles;
-
 @Configuration
-@EnableGlobalMethodSecurity(prePostEnabled=true)
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-
-    // @Bean
-    // public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
-    // return new InMemoryUserDetailsManager(
-    // User.withDefaultPasswordEncoder().username("user").password("password")
-    // .authorities("ROLE_USER").build(),
-    // User.withDefaultPasswordEncoder().username("admin").password("admin")
-    // .authorities("ROLE_ACTUATOR", "ROLE_USER").build());
-    // }
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 
     @Override
     @Bean
     public UserDetailsService userDetailsService() {
         final InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(User.withUsername("user").password("user").roles("USER").build());
-        manager.createUser(User.withUsername("admin").password("admin").roles("USER","ADMIN").build());
+        manager.createUser(User.withUsername("user").password("user").roles(USER).build());
+        manager.createUser(User.withUsername("admin").password("admin").roles(USER, ADMIN).build());
         return manager;
     }
 

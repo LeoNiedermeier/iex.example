@@ -8,42 +8,43 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.boot.test.web.client.MockServerRestTemplateCustomizer;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.test.web.client.MockRestServiceServer;
-import org.springframework.web.client.RestTemplate;
 
 public class CompanyServiceTest {
 
-	private MockRestServiceServer server;
-	private CompanyService companyService;
+    private MockRestServiceServer server;
+    private CompanyService companyService;
 
-	@Before
-	public void init() {
-		final RestTemplate restTemplate = new RestTemplate();
-		this.server = MockRestServiceServer.bindTo(restTemplate).build();
-		final RestTemplateBuilder builder = new RestTemplateBuilder().requestFactory(restTemplate.getRequestFactory());
-		this.companyService = new CompanyService(builder);
-	}
+    @Before
+    public void init() {
+        // Wie in javadoc von MockServerRestTemplateCustomizer
+        final MockServerRestTemplateCustomizer mockServerCustomizer = new MockServerRestTemplateCustomizer();
+        this.companyService = new CompanyService(new RestTemplateBuilder(mockServerCustomizer));
+        this.server = mockServerCustomizer.getServer();
+    }
 
-	@Test
-	public void testGetCompany() {
-		server.expect(requestTo("https://api.iextrading.com/1.0/stock/abc/company"))
-				.andRespond(withSuccess(
-						new ClassPathResource("/io/github/leoniedermeier/iex/example/stock/company/company_abc.json"),
-						APPLICATION_JSON));
-		Company company = this.companyService.getCompany("abc");
+    @Test
+    public void testGetCompany() {
+        // RootUri wird automatich entfernd
+        this.server.expect(requestTo("/stock/abc/company"))
+                .andRespond(withSuccess(
+                        new ClassPathResource("/io/github/leoniedermeier/iex/example/stock/company/company_abc.json"),
+                        APPLICATION_JSON));
+        final Company company = this.companyService.getCompany("abc");
 
-		assertThat(company.getSymbol(), equalTo("ABC"));
-		assertThat(company.getCompanyName(), equalTo("ABC companyName"));
-		assertThat(company.getExchange(), equalTo("ABC exchange"));
-		assertThat(company.getIndustry(), equalTo("ABC industry"));
-		assertThat(company.getWebsite(), equalTo("ABC website"));
-		assertThat(company.getDescription(), equalTo("ABC description"));
-		assertThat(company.getCeo(), equalTo("ABC ceo"));
-		assertThat(company.getIssueType(), equalTo("ABC issueType"));
-		assertThat(company.getSector(), equalTo("ABC sector"));
+        assertThat(company.getSymbol(), equalTo("ABC"));
+        assertThat(company.getCompanyName(), equalTo("ABC companyName"));
+        assertThat(company.getExchange(), equalTo("ABC exchange"));
+        assertThat(company.getIndustry(), equalTo("ABC industry"));
+        assertThat(company.getWebsite(), equalTo("ABC website"));
+        assertThat(company.getDescription(), equalTo("ABC description"));
+        assertThat(company.getCeo(), equalTo("ABC ceo"));
+        assertThat(company.getIssueType(), equalTo("ABC issueType"));
+        assertThat(company.getSector(), equalTo("ABC sector"));
 
-		server.verify();
-	}
+        this.server.verify();
+    }
 }

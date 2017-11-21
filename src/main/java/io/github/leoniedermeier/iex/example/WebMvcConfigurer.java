@@ -11,4 +11,5 @@ public class WebMvcConfigurer implements org.springframework.web.servlet.config.
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/").setViewName("forward:/refdata");
     }
+
 }

@@ -8,7 +8,6 @@ import static org.mockito.Mockito.when;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -25,35 +24,33 @@ import com.gargoylesoftware.htmlunit.html.HtmlTable;
  * verwendet. "Per Hand" wäre der Setup ziemlich aufwändig.
  */
 @RunWith(SpringRunner.class)
-@WebMvcTest(controllers = { RefDataController.class },
-		// disable security
-		excludeAutoConfiguration = { MockMvcSecurityAutoConfiguration.class })
+@WebMvcTest(controllers = { RefDataController.class }, secure = false)
 public class RefDataController_SpringRunner_Test {
 
-	@Autowired
-	private WebClient webClient;
+    @Autowired
+    private WebClient webClient;
 
-	@MockBean
-	private RefDataService refDataService;
+    @MockBean
+    private RefDataService refDataService;
 
-	@Test
-	public void testRefdata() throws Exception {
-		when(this.refDataService.getRefDataSymbols())
-				.thenReturn(asList(new RefDataSymbol("a-symbol", "a-name"), new RefDataSymbol("b-symbol", "b-name")));
+    @Test
+    public void testRefdata() throws Exception {
+        when(this.refDataService.getRefDataSymbols())
+                .thenReturn(asList(new RefDataSymbol("a-symbol", "a-name"), new RefDataSymbol("b-symbol", "b-name")));
 
-		final HtmlPage page = this.webClient.getPage("/refdata");
+        final HtmlPage page = this.webClient.getPage("/refdata");
 
-		final HtmlTable table = page.getHtmlElementById("tableRefDataSymbols");
+        final HtmlTable table = page.getHtmlElementById("tableRefDataSymbols");
 
-		// header row ignored
+        // header row ignored
 
-		// first data row
-		assertThat(table.getCellAt(1, 0).getTextContent(), equalTo("a-name"));
-		assertThat(table.getCellAt(1, 1).getTextContent(), equalTo("a-symbol"));
+        // first data row
+        assertThat(table.getCellAt(1, 0).getTextContent(), equalTo("a-name"));
+        assertThat(table.getCellAt(1, 1).getTextContent(), equalTo("a-symbol"));
 
-		// second data row
-		assertThat(table.getCellAt(2, 0).getTextContent(), equalTo("b-name"));
-		assertThat(table.getCellAt(2, 1).getTextContent(), equalTo("b-symbol"));
-	}
+        // second data row
+        assertThat(table.getCellAt(2, 0).getTextContent(), equalTo("b-name"));
+        assertThat(table.getCellAt(2, 1).getTextContent(), equalTo("b-symbol"));
+    }
 
 }

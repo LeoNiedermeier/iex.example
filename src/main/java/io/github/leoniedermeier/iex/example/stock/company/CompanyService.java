@@ -14,16 +14,18 @@ public class CompanyService {
 
     private final RestTemplate restTemplate;
 
-    public CompanyService(final RestTemplateBuilder builder) {
-        this.restTemplate = builder.build();
+    public CompanyService(final RestTemplateBuilder restTemplateBuilder) {
+        this.restTemplate = restTemplateBuilder.rootUri("https://api.iextrading.com/1.0").build();
     }
 
     @Cacheable(CACHE_NAME_COMPANY)
-    // Meta-Annotation für wiederkehrende PreAuths.
-   // @HasRoleAdmin
-    public Company getCompany(String symbol) {
+    @HasRoleAdmin
+    public Company getCompany(final String symbol) {
         // /stock/aapl/company
-        return this.restTemplate.getForObject("https://api.iextrading.com/1.0/stock/{symbol}/company", Company.class,
-                symbol);
+        return this.restTemplate.getForObject("/stock/{symbol}/company", Company.class, symbol);
+    }
+
+    RestTemplate getRestTemplate() {
+        return this.restTemplate;
     }
 }
