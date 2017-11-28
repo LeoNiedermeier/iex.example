@@ -22,7 +22,7 @@ public class CompanyServiceTest {
     public void init() {
         // Wie in javadoc von MockServerRestTemplateCustomizer
         final MockServerRestTemplateCustomizer mockServerCustomizer = new MockServerRestTemplateCustomizer();
-        this.companyService = new CompanyService(new RestTemplateBuilder(mockServerCustomizer));
+        this.companyService = new CompanyService(new RestTemplateBuilder(mockServerCustomizer),null);
         this.server = mockServerCustomizer.getServer();
     }
 

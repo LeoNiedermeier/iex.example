@@ -25,13 +25,13 @@ public class NewsServiceTest {
     public void init() {
 
         final MockServerRestTemplateCustomizer customizer = new MockServerRestTemplateCustomizer();
-        this.newsService = new NewsService(new RestTemplateBuilder(customizer));
+        this.newsService = new NewsService(new RestTemplateBuilder(customizer),null);
         this.server = customizer.getServer();
     }
 
     @Test
     public void testGetNews() {
-        this.server.expect(MockRestRequestMatchers.requestTo("https://api.iextrading.com/1.0/stock/aapl/news/last/5"))
+        this.server.expect(MockRestRequestMatchers.requestTo("/stock/aapl/news/last/5"))
                 .andRespond(MockRestResponseCreators.withSuccess(
                         new ClassPathResource("io/github/leoniedermeier/iex/example/stock/news/news.json"),
                         MediaType.APPLICATION_JSON));

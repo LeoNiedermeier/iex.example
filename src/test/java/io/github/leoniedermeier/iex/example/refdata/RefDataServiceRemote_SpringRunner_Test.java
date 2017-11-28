@@ -35,7 +35,7 @@ public class RefDataServiceRemote_SpringRunner_Test {
 	@Test
 	public void test() {
 
-		this.server.expect(requestTo("https://api.iextrading.com/1.0/ref-data/symbols"))
+		this.server.expect(requestTo("/ref-data/symbols"))
 				.andRespond(withSuccess(
 						new ClassPathResource("io/github/leoniedermeier/iex/example/refdata/refDataSymbols.json"),
 						APPLICATION_JSON));

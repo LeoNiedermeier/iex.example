@@ -18,7 +18,7 @@
             <div class="d-flex w-100 justify-content-between">
                 <small class="text-muted" th:text="${message.source}">Message source</small>
                 <!--  URL nach aussen, daher kein Rewrite mit @{...} -->
-                <a th:href="${message.url}" class="badge badge-info">Read full story</a>
+                <a th:href="${message.url}" target="_blank" class="badge badge-info">Read full story</a>
             </div>
         </div>
     </div>

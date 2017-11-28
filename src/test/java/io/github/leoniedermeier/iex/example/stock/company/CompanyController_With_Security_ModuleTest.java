@@ -8,6 +8,7 @@ import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.ClassPathResource;
@@ -37,11 +38,14 @@ public class CompanyController_With_Security_ModuleTest {
     @Autowired
     private MockRestServerRestTemplateCustomizer mockServer;
 
+    @Value("${iextrading.root.uri}")
+    private String rootUri;
+
     @Test
     @WithMockUser(username = "admin", roles = { "USER", "ADMIN" })
     public void test_with_admin() throws Exception {
 
-        this.mockServer.expect(requestTo("https://api.iextrading.com/1.0/stock/abc/company"))
+        this.mockServer.expect(requestTo(rootUri + "/stock/abc/company"))
                 .andRespond(MockRestResponseCreators.withSuccess(
                         new ClassPathResource("/io/github/leoniedermeier/iex/example/stock/company/company_abc.json"),
                         MediaType.APPLICATION_JSON));

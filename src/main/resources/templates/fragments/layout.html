@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:fragment="template(title,content)">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    th:fragment="template(title,content)">
 <head>
 <title th:text="${title}">Layout</title>
 <link rel="icon" href="/favicon.ico" />
@@ -42,11 +43,17 @@ body {
                     </a>
                 </div>
             </div>
-            
-            <!--  Username und Logou-Button nur anzeigen, wenn eingelogged, d.h. remoteUser != null -->
+
+            <!--  Username und Logout-Button nur anzeigen, wenn eingelogged, d.h. remoteUser != null -->
             <!-- remoteUser wird aus SecurityContextHolderAwareRequestWrapper geholt -->
             <th:block th:if="${#httpServletRequest.remoteUser != null}">
-                <div class="nav-item" th:text="${#httpServletRequest.remoteUser}">Username</div>
+            </th:block>
+
+            <div sec:authorize="!isAuthenticated()">
+                <a th:href="@{/login}" class="btn badge badge-success">Sign in</a>
+            </div>
+            <th:block sec:authorize="isAuthenticated()">
+                <div class="nav-item" sec:authentication="name">Username</div>
 
                 <!-- the default logout url, handled by spring security -->
                 <!-- muss post sein wg. csrf token -->

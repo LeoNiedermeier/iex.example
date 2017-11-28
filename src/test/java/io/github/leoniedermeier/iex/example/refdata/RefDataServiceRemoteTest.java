@@ -27,14 +27,14 @@ public class RefDataServiceRemoteTest {
     public void init() {
         // Wie in javadoc von MockServerRestTemplateCustomizer
         MockServerRestTemplateCustomizer customizer = new MockServerRestTemplateCustomizer();
-        this.refDataService = new RefDataServiceRemote(new RestTemplateBuilder(customizer));
+        this.refDataService = new RefDataServiceRemote(new RestTemplateBuilder(customizer), null);
         this.mockServer = customizer.getServer();
     }
 
     @Test
     public void testGetRefDataSymbols_empty_result() {
 
-        this.mockServer.expect(requestTo("https://api.iextrading.com/1.0/ref-data/symbols")).andRespond(withSuccess());
+        this.mockServer.expect(requestTo("/ref-data/symbols")).andRespond(withSuccess());
 
         this.refDataService.getRefDataSymbols();
         this.mockServer.verify();
@@ -42,7 +42,7 @@ public class RefDataServiceRemoteTest {
 
     @Test
     public void testGetRefDataSymbols() throws Exception {
-        this.mockServer.expect(requestTo("https://api.iextrading.com/1.0/ref-data/symbols"))
+        this.mockServer.expect(requestTo("/ref-data/symbols"))
                 .andRespond(withSuccess(
                         new ClassPathResource("io/github/leoniedermeier/iex/example/refdata/refDataSymbols.json"),
                         MediaType.APPLICATION_JSON_UTF8));

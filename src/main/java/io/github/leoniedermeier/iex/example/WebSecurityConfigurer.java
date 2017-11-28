@@ -35,11 +35,12 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 		        .requestMatchers(StaticResourceRequest.toCommonLocations()).permitAll()
 		        // news nur für eingeloggte user:
 		        .mvcMatchers("/stock/*/news/**").hasRole(USER)
-		        .mvcMatchers("/**").permitAll()
-		       
-		    .and()
-			    .cors()
-			.and()
+		        // company details nur für admin
+		        .mvcMatchers("/stock/*/company/**").hasRole(ADMIN)
+		        .mvcMatchers("/stock/*/quote").permitAll()
+		        .mvcMatchers("/refdata").permitAll()
+		        .mvcMatchers("/**").denyAll()
+		   .and()
 			    // url für Page angeben, sonst kommt default Page, 
 			    // natürlich für alle permit, sonst kann man sich nicht einloggen
 			    .formLogin().loginPage("/login").permitAll()

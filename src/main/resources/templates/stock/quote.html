@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragments/layout :: template('Stock News',~{::content})">
+
+<th:block th:fragment="content">
+    <div class="row">
+        <h1>Quote information for [[${symbol}]]</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <table class="table" id="quoteInformation">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Date</td>
+                        <td>Value</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Open</td>
+                        <td th:text="${#temporals.format(open.time ,'dd-MM-yyyy HH:mm')}"></td>
+                        <td th:text="${#numbers.formatDecimal(open.price,1,2)}"></td>
+                    </tr>
+                    <tr>
+                        <td>Close</td>
+                        <td th:text="${#temporals.format(close.time, 'dd-MM-yyyy HH:mm')}"></td>
+                        <td th:text="${#numbers.formatDecimal(close.price,1,2)}"></td>
+                    </tr>
+                    <tr>
+                        <td>Current</td>
+                        <td th:text="${#temporals.format(current.time, 'dd-MM-yyyy HH:mm')}"></td>
+                        <td th:text="${#numbers.formatDecimal(current.price,1,2)}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</th:block>
+</html>
