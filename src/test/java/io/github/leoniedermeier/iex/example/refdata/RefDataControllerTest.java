@@ -12,82 +12,81 @@ import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
+import org.springframework.test.web.ModelAndViewAssert;
 import org.springframework.web.servlet.ModelAndView;
-
-import io.github.leoniedermeier.iex.example.refdata.RefDataController.CharAndIndex;
 
 public class RefDataControllerTest {
 
-	private RefDataService refDataService;
-	private RefDataController refDataController;
+    private RefDataService refDataService;
+    private RefDataController refDataController;
 
-	private void check(final int fromIndex, final int expectedResultLength) {
-		final ModelAndView modelAndView = this.refDataController.refdata(fromIndex);
-		final List<RefDataSymbol> refDataSymbols = (List<RefDataSymbol>) modelAndView.getModelMap()
-				.get("refDataSymbols");
-		assertThat(refDataSymbols, Matchers.iterableWithSize(expectedResultLength));
-	}
+    private void check(final int fromIndex, final int expectedResultLength) {
+        final ModelAndView modelAndView = this.refDataController.refdata(fromIndex);
+        final List<RefDataSymbol> refDataSymbols = ModelAndViewAssert.assertAndReturnModelAttributeOfType(modelAndView,
+                "refDataSymbols", List.class);
+        assertThat(refDataSymbols, Matchers.iterableWithSize(expectedResultLength));
+    }
 
-	@Before
-	public void init() {
+    @Before
+    public void init() {
 
-		this.refDataService = Mockito.mock(RefDataService.class);
-		this.refDataController = new RefDataController(this.refDataService);
+        this.refDataService = Mockito.mock(RefDataService.class);
+        this.refDataController = new RefDataController(this.refDataService);
 
-		final List<RefDataSymbol> list = IntStream.range(10, 30)
-				.mapToObj(i -> new RefDataSymbol(i + "-symbol", i + "-name")).collect(Collectors.toList());
+        final List<RefDataSymbol> list = IntStream.range(10, 30)
+                .mapToObj(i -> new RefDataSymbol(i + "-symbol", i + "-name")).collect(Collectors.toList());
 
-		when(this.refDataService.getRefDataSymbols()).thenReturn(list);
+        when(this.refDataService.getRefDataSymbols()).thenReturn(list);
 
-	}
+    }
 
-	@Test
-	public void testRefData_char_to_index() {
-		final ModelAndView modelAndView = this.refDataController.refdata(3);
-		final List<RefDataController.CharAndIndex> charToIndex = (List<CharAndIndex>) modelAndView.getModelMap()
-				.get("charToIndex");
+    @Test
+    public void testRefData_char_to_index() {
+        final ModelAndView modelAndView = this.refDataController.refdata(3);
+        final List<RefDataController.CharAndIndex> charToIndex = ModelAndViewAssert
+                .assertAndReturnModelAttributeOfType(modelAndView, "charToIndex", List.class);
 
-		assertThat(charToIndex, Matchers.iterableWithSize(2));
+        assertThat(charToIndex, Matchers.iterableWithSize(2));
 
-		assertThat(charToIndex.get(0).getCharacter(), equalTo('1'));
-		assertThat(charToIndex.get(0).getIndex(), equalTo(0));
+        assertThat(charToIndex.get(0).getCharacter(), equalTo('1'));
+        assertThat(charToIndex.get(0).getIndex(), equalTo(0));
 
-		assertThat(charToIndex.get(1).getCharacter(), equalTo('2'));
-		assertThat(charToIndex.get(1).getIndex(), equalTo(10));
-	}
+        assertThat(charToIndex.get(1).getCharacter(), equalTo('2'));
+        assertThat(charToIndex.get(1).getIndex(), equalTo(10));
+    }
 
-	@Test
-	public void testRefData_with_parameters() {
+    @Test
+    public void testRefData_with_parameters() {
 
-		final ModelAndView modelAndView = this.refDataController.refdata(3);
-		final List<RefDataSymbol> refDataSymbols = (List<RefDataSymbol>) modelAndView.getModelMap()
-				.get("refDataSymbols");
+        final ModelAndView modelAndView = this.refDataController.refdata(3);
+        final List<RefDataSymbol> refDataSymbols = ModelAndViewAssert.assertAndReturnModelAttributeOfType(modelAndView,
+                "refDataSymbols", List.class);
 
-		assertThat(refDataSymbols, Matchers.iterableWithSize(15));
-		assertThat(refDataSymbols.get(0).getName(), Matchers.equalTo("13-name"));
-		assertThat(refDataSymbols.get(14).getSymbol(), Matchers.equalTo("27-symbol"));
+        assertThat(refDataSymbols, Matchers.iterableWithSize(15));
+        assertThat(refDataSymbols.get(0).getName(), Matchers.equalTo("13-name"));
+        assertThat(refDataSymbols.get(14).getSymbol(), Matchers.equalTo("27-symbol"));
 
-	}
+    }
 
-	@Test
-	public void testRefData_with_parameters_from_index_lower_than_0() {
+    @Test
+    public void testRefData_with_parameters_from_index_lower_than_0() {
 
-		final ModelAndView modelAndView = this.refDataController.refdata(-3);
-		final List<RefDataSymbol> refDataSymbols = (List<RefDataSymbol>) modelAndView.getModelMap()
-				.get("refDataSymbols");
-		assertThat(refDataSymbols, Matchers.iterableWithSize(15));
-		assertThat(refDataSymbols.get(0).getName(), Matchers.equalTo("10-name"));
-	}
+        final ModelAndView modelAndView = this.refDataController.refdata(-3);
+        final List<RefDataSymbol> refDataSymbols = ModelAndViewAssert.assertAndReturnModelAttributeOfType(modelAndView,
+                "refDataSymbols", List.class);
+        assertThat(refDataSymbols, Matchers.iterableWithSize(15));
+        assertThat(refDataSymbols.get(0).getName(), Matchers.equalTo("10-name"));
+    }
 
-	@Test
-	public void testRefData_with_parameters_from_index_to_big() {
-		check(20, 0);
-	}
+    @Test
+    public void testRefData_with_parameters_from_index_to_big() {
+        check(20, 0);
+    }
 
-	@Test
-	public void testRefData_with_parameters_from_length_to_big() {
+    @Test
+    public void testRefData_with_parameters_from_length_to_big() {
 
-		check(13, 7);
-	}
+        check(13, 7);
+    }
 
 }

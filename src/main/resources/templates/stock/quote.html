@@ -14,21 +14,23 @@
                         <td>Value</td>
                     </tr>
                 </thead>
-                <tbody>
+                <!-- QuoteOverview als aktuelles Object verwenden. Ausdrücke dann mit *{} statt mit ${}-->
+                <tbody th:object="${quoteOverview}">
                     <tr>
                         <td>Open</td>
-                        <td th:text="${#temporals.format(open.time ,'dd-MM-yyyy HH:mm')}"></td>
-                        <td th:text="${#numbers.formatDecimal(open.price,1,2)}"></td>
+                        <!-- Mit ?. null safe Abfrage -->
+                        <td th:text="*{#temporals.format(open?.time ,'dd-MM-yyyy HH:mm')}"></td>
+                        <td th:text="*{#numbers.formatDecimal(open?.price,1,2)}"></td>
                     </tr>
                     <tr>
                         <td>Close</td>
-                        <td th:text="${#temporals.format(close.time, 'dd-MM-yyyy HH:mm')}"></td>
-                        <td th:text="${#numbers.formatDecimal(close.price,1,2)}"></td>
+                        <td th:text="*{#temporals.format(close?.time, 'dd-MM-yyyy HH:mm')}"></td>
+                        <td th:text="*{#numbers.formatDecimal(close?.price,1,2)}"></td>
                     </tr>
                     <tr>
                         <td>Current</td>
-                        <td th:text="${#temporals.format(current.time, 'dd-MM-yyyy HH:mm')}"></td>
-                        <td th:text="${#numbers.formatDecimal(current.price,1,2)}"></td>
+                        <td th:text="*{#temporals.format(current?.time, 'dd-MM-yyyy HH:mm')}"></td>
+                        <td th:text="*{#numbers.formatDecimal(current?.price,1,2)}"></td>
                     </tr>
                 </tbody>
             </table>

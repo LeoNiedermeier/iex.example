@@ -28,6 +28,12 @@ public class Quote {
         super();
     }
 
+    public Quote(final LocalDateTime time, final Double price) {
+        super();
+        this.time = time;
+        this.price = price;
+    }
+
     public Double getPrice() {
         return this.price;
     }

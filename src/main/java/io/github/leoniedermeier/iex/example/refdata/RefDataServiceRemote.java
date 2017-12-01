@@ -8,7 +8,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestOperations;
@@ -26,12 +25,12 @@ public class RefDataServiceRemote implements RefDataService {
      * {@link RestTemplate}.
      */
     @Autowired
-    public RefDataServiceRemote(final RestTemplateBuilder builder, @Value("${iextrading.root.uri}") final String rootUri) {
+    public RefDataServiceRemote(final RestTemplateBuilder builder,
+            @Value("${iextrading.root.uri}") final String rootUri) {
         this.restOperations = builder.rootUri(rootUri).build();
     }
 
     @Override
-    @Cacheable(CACHE_NAME_REF_DATA_SYMBOL)
     public List<RefDataSymbol> getRefDataSymbols() {
         // API descripttion: https://iextrading.com/developer/docs/
         final ResponseEntity<RefDataSymbol[]> entity = this.restOperations.getForEntity("/ref-data/symbols",

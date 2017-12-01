@@ -38,7 +38,6 @@ siehe auch http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#synthe
                             <th scope="col">Name</th>
                             <th scope="col">Symbol</th>
                             <th></th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,15 +45,17 @@ siehe auch http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#synthe
                         <tr th:each="item : ${refDataSymbols}" scope="row">
                             <td th:text="${item.name}" class="w-100 ">--</td>
                             <td th:text="${item.symbol}">--</td>
-                            <td>
+                            <td class="text-nowrap">
                                 <!-- spezielles Format für urls: Strings zusammenbauen -->
                                 <a class="btn btn-primary btn-sm" th:href="@{'/stock/' + ${item.symbol} +'/company' }"
                                     role="button">Details</a>
-                            </td>
-                            <td>
+                            
                                 <!-- oder mit variable template in url -->
                                 <a class="btn btn-info btn-sm"
                                     th:href="@{/stock/{symbol}/news/last/4(symbol=${item.symbol}) }" role="button">News</a>
+                                    
+                                <a class="btn btn-secondary btn-sm"
+                                    th:href="@{/stock/{symbol}/quote(symbol=${item.symbol}) }" role="button">Quote</a>
                             </td>
                         </tr>
                     </tbody>

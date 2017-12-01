@@ -6,6 +6,10 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
+import io.github.leoniedermeier.iex.example.security.HasRoleAdmin;
+
 @Service
 public class CompanyService {
 
@@ -19,6 +23,8 @@ public class CompanyService {
     }
 
     @Cacheable(CACHE_NAME_COMPANY)
+    @HasRoleAdmin
+    @HystrixCommand // no default method
     public Company getCompany(final String symbol) {
         // /stock/aapl/company
         return this.restTemplate.getForObject("/stock/{symbol}/company", Company.class, symbol);
